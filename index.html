@@ -1,0 +1,312 @@
+<head>
+    <title>BMAPP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+
+<body>
+    
+    <!-- BARRA NAVEGACION -->
+    <nav id="navbar">
+        <div>
+            <h1>BMAPP</h1>
+        </div>
+        <div class="navLogin">
+            <div class="hide">
+                <h3 id="welcomeMessage"></h3>
+            </div>
+            <div><button id="logoutBtn" class="hide" onclick="logout()">Desconectar</button></div>
+        </div>
+
+    </nav>
+
+    <!-- BARRA NAVEGACION-MOVIL -->
+    <nav id="navbar-mobile">
+        <!-- FIX-->
+        <div>
+            <img id="menuicon" src="./img/menumobile.svg" onclick="mobileAsideAction()">                
+        </div>
+        <div>
+            <h1>BMAPP</h1>
+        </div>
+
+    </nav>
+
+    <!-- DIALOGO INFORMACION -->
+    <div id="messageDialogBox">
+        <div id="messageDialog">
+            <h1 id="messageDialogText">This is a test message. You have entered the wrong credentials.</h1>
+            <div id="messageDialogCloseBtn">Cerrar</div>
+        </div>
+    </div>
+
+
+    <!-- LOGIN/REGISTRARSE -->
+    <div id="loginRegister">
+         <!-- LOGIN -->
+        <div id="login" class="logRegForm">
+            
+            <div class="loginRegHeader"><h1>LOGIN</h1></div>
+            <div><input id="loginUsernameInput" class="formElements formInputs" type="text" placeholder="Usuario"></div>
+            <div><input id="loginPasswordInput" class="formElements formInputs" type="password" placeholder="Contraseña"></div>
+            <div><button id="loginBtn" class="formElements stdBtn loginRegBtn" onclick="login()">LOGIN</button></div>
+            <div><h3 onclick="showRegForm()">¿No eres usuario? <span class="atention" ">Registrate aqui</span></h3></div>
+            
+        </div>
+
+        <!-- REGISTRARSE -->
+        <div id="register" class="logRegForm">
+
+            <div class="loginRegHeader"><h1>REGISTRARSE</h1></div>
+            <div><input id="registerUsernameInput" class="formElements formInputs" type="text" placeholder="Usuario"></div>
+            <div><input id="registerEmailInput" class="formElements formInputs" type="text" placeholder="Email"></div>
+            <div><input id="registerPasswordInput" class="formElements formInputs" type="password" placeholder="Contraseña"></div>
+            <div><input id="registerRetypePasswordInput" class="formElements formInputs" type="password" placeholder="Reintroduce contraseña"></div>
+            <div><button id="registerBtn" class="formElements stdBtn loginRegBtn" onclick="register()">REGISTRARSE</button></div>
+            <div><h3>¿Ya tienes cuenta? <span class="atention" onclick="showLogForm()">Entra aqui</span></h3></div>
+
+        </div>
+    </div>
+
+    <main id="main" style="display: none;">
+
+        
+        <!-- PANEL LATERAL "aside" -->
+        <aside id="aside">
+            <ul>
+                <li onclick="mostrarInicio()">Inicio</li>
+                <li onclick="mostrarGastos()">Gastos</li>
+                <li onclick="mostrarGraficos()">Gráficos</li>
+            </ul>
+            <ul>
+                <li onclick="mostrarAcercaDe()">Acerca de</li>
+            </ul>
+        </aside>
+
+        <aside id="aside-movil">
+            <ul>
+                <li onclick="mostrarInicio()">Inicio</li>
+                <li onclick="mostrarGastos()">Gastos</li>
+                <li onclick="mostrarGraficos()">Gráficos</li>
+            </ul>
+            <ul>
+                <li onclick="mostrarAcercaDe()">Acerca de</li>
+                <li onclick="logout()">Desconectar</li>
+            </ul>
+        </aside>
+
+        <!-- PANEL PRINCIPAL - INICIO -->
+        <section id="dashboard-main" class="hide">
+            <h1>Hola, aquí tienes un resumen de tus gastos</h1>
+            <div class="chartHolder">
+                <div class="displayHolder">
+                    <h2>Este mes</h2>
+                    <div id="chartGastosMes" class="roundDisplay"><h2 id="chartGastosMesText">1245,45 €</h2></div>
+                </div>
+                <div class="displayHolder">
+                    <h2>Este año</h2>
+                    <div id="chartGastosAno" class="roundDisplay"><h2 id="chartGastosAnoText">21879,95 €</h2></div>
+                </div>
+                <div class="displayHolder">
+                    <!--h2>Tipos este mes</h2-->
+                    <div id="chartTipoGastos">
+                        <!-- Chart tipos gastos mes -->
+                        <div id="tipoGastosMes"></div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- SECCIÓN GASTOS -->
+        <section id="gastos-main" class="hide" >
+
+            <!-- SECCIÓN GASTOS > FECHA ACTUAL -->
+            <div id="fechaActual"><h1 id="arrows-left" onclick="leftArrow()" class="greenColour"><<</h1><h1><span id="currentMonth">Septiembre</span><span id="currentYear">2021</span></h1><h1 id="arrows-right" onclick="rightArrow()" class="greenColour">>></h1></div>
+                
+            <!-- SECCIÓN GASTOS > BARRA ACCIONES -->
+            <div id="actionbar">
+
+                <!-- SECCIÓN GASTOS > BARRA ACCIONES > SELECTOR FECHA -->
+                <div id="selectorFecha">
+                    <select id="monthSelect">
+                        <option value="1">Enero</option>
+                        <option value="2">Febrero</option>
+                        <option value="3">Marzo</option>
+                        <option value="4">Abril</option>
+                        <option value="5">Mayo</option>
+                        <option value="6">Junio</option>
+                        <option value="7">Julio</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Septiembre</option>
+                        <option value="10">Octubre</option>
+                        <option value="11">Noviembre</option>
+                        <option value="12">Diciembre</option>
+                    </select>
+                    <select id="yearSelect">
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                    </select>
+                    <button id="irMesBtn" class="stdBtn" onclick="setDate()">IR</button>
+                </div>
+
+                <!-- SECCIÓN GASTOS > BARRA ACCIONES > ACCIONES SOBRE GASTOS -->
+                <div id="dataOperations">
+                    <button id="addBtn" class="stdBtn" onclick="showAddExpenseDialog()">+  AÑADIR</button>
+                    <button id="delBtn" class="stdBtn" onclick="deleteExpenses()">X  BORRAR</button>
+                </div>
+            </div>
+
+            <!-- SECCIÓN GASTOS > TABLA DE DATOS DE GASTOS -->
+            
+            <div class="scrollable">
+                <table id="tablaDatos">
+                    <thead>
+                        <tr class="">
+                            <th></th>
+                            <th>Fecha</th>
+                            <th>Tipo</th>
+                            <th>Descripción</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                        <tbody id="tablaDatosBody">
+                            <tr class="">
+                                <td><input type="checkbox" class="selectedBox"
+                                        value="${expenseData[i].expenseId}"></input>
+                                </td>
+                                <td>15-12-2012</td>
+                                <td>Demo</td>
+                                <td>Demo</td>
+                                <td>300 €</td>
+                            </tr>
+                            <tr class="">
+                                <td><input type="checkbox" class="selectedBox"
+                                        value="${expenseData[i].expenseId}"></input>
+                                </td>
+                                <td>15-12-2012</td>
+                                <td>Demo</td>
+                                <td>Demo</td>
+                                <td>300 €</td>
+                            </tr>
+                            <tr class="">
+                                <td><input type="checkbox" class="selectedBox"
+                                        value="${expenseData[i].expenseId}"></input>
+                                </td>
+                                <td>15-12-2012</td>
+                                <td>Demo</td>
+                                <td>Demo</td>
+                                <td>300 €</td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div> 
+            
+            
+
+            <!-- SECCIÓN GASTOS > TOTAL MES -->
+            <div id="totalMes" class="">
+                <div></div>
+                <div id="total">
+                    <h3>TOTAL MES</h3>
+                    <h3 id="totalMonth"></h3>
+                </div>
+            </div>
+
+            <!-- SECCIÓN GASTOS > FORMULARIO AÑADIR GASTO -->
+            <div id="addExpenseOverlay">
+                <div id="addExpenseForm">
+                    <div id="addExpenseCloseButton">X</div>
+                    <div>
+                        <!--<h1>Añadir Gasto</h1>-->
+                    </div>
+                    <div><select name="type" id="typeInput">
+                            <option value="Transporte">Transporte</option>
+                            <option value="Ropa">Ropa</option>
+                            <option value="Comida">Comida</option>
+                            <option value="Facturas - Luz">Facturas - Luz</option>
+                            <option value="Facturas - Agua">Facturas - Agua</option>
+                            <option value="Facturas - Gas">Facturas - Gas</option>
+                            <option value="Facturas - Internet">Facturas - Internet</option>
+                        </select>
+                    </div>
+                    <div><input type="text" id="descriptionInput" placeholder="Description" /></div>
+                    <div><input type="text" id="amountInput" placeholder="Amount" /></div>
+                    <div><input type="date" id="expenseDate" name="expenseDate"</div>
+                    <div><button type="button" class="stdBtn" onclick="submitExpense()">Enviar</button></div>
+    
+                </div>
+            </div>
+
+        </section>
+
+        <!-- SECCIÓN GASTOS > MODAL ELIMINAR GASTO -->
+        <div id="deleteExpensesOverlay">
+            <div id="deleteExpensesModal">
+                <p>¿Estas seguro que quieres borrar estos gastos?</p>
+                <button id="deleteYes" class="stdBtn">Si</button>
+                <button id="deleteCancel" class="stdBtn">Cancelar</button>
+            </div>
+
+        </div>
+
+
+        <!-- SECCIÓN GRÁFICOS -->
+        <section id="graficos-main" class="hide">
+            <h1>Gráficos</h1>
+            <div class="chartContainer">
+                <div class="chartCard">
+                    <!-- Chart tipos gastos mes -->
+                    <div id="tipoGastosMes2"></div>
+                </div>
+                <div class="chartCard">
+                    <!-- Chart tipos gastos mes -->
+                    <div id="gastosDiasMes"></div>
+                </div>
+            </div>
+            <div class="chartContainer">
+                <div class="chartCard">
+                    <!-- Chart tipo de gastos del año -->
+                    <div id="tipoGastosAno"></div>
+                </div>
+                <div class="chartCard">
+                    <!-- Chart gastos del año por mes -->
+                    <div id="evolGastosAno" ></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN ACERCA DE -->
+        <section id="acerca-de" class="hide">
+            <h1>Acerca de BMAPP</h1>
+            <h3>Tu aplicación de gestión de gastos gratuita</h3>
+            <p>Esta aplicación web fue elaborada para facilitar 
+                la vida de las personas en relación a  
+                la gestión de sus gastos en el dia a día. </p>
+            <p>Ha sido diseñado y creado con mucho cariño por James Sealey</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci, fuga aperiam. Aperiam quas quasi unde, corporis dolore earum perferendis qui minima suscipit molestiae obcaecati dignissimos dolorem numquam quo error praesentium.</p>
+        </section>
+
+    </main> 
+
+     <!-- PIE DE PÁGINA "footer" -->
+    <footer>
+        
+    </footer>
+    
+
+    <script src="js/script.js"></script>
+    
+</body>
+
+
+
+</html>

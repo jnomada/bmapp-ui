@@ -1,0 +1,1036 @@
+/* Generic */
+
+* {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+
+}
+
+body {
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* LOGIN */
+
+
+
+/* NAV BAR */
+
+#navbar {
+
+    background-color: #4d3ee1;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 2fr 6fr;
+    height: fit-content;
+    padding-top: 20px;
+
+
+}
+
+#navbar h1 {
+    color: aliceblue;
+    font-size: 2.0em;
+    text-align: center;
+
+
+
+}
+
+.navLogin {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 5%;
+
+}
+
+
+.navLogin button {
+    border-radius: 15px;
+    height: 30px;
+    min-width: 150px;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 1.2rem;
+    background-color: #24c40f;
+    border: none;
+    color: #FFF;
+}
+
+.navLogin button:hover {
+
+    background-color: #363f34;
+    border: 3px solid rgb(55, 253, 253);
+    color: #FFF;
+}
+
+#welcomeMessage {
+    margin-left: 5px;
+    margin-right: 15px;
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+}
+
+#navbar-mobile {
+    display: none;
+}
+
+/* NAV BAR - MÓVIL */
+@media only screen and (max-width: 900px) {
+    #navbar-mobile {
+        background-color: #4d3ee1;
+        width: 100vw;
+        display: inline-flex;
+        height: fit-content;
+        align-items: center;
+        color: #FFF;
+        
+    }
+
+    #navbar-mobile img{
+        cursor: pointer;
+        height: 25px;
+        width: 25px;
+        
+    }
+    
+    #navbar-mobile > *{
+        margin-left: 15px;
+        
+    }
+
+    .fa-bars {
+        height: 35px;
+        width: ;
+    }
+
+    #navbar {
+        display: none;
+    }
+
+}
+
+
+/* DIALOGO INFORMACION */
+
+#messageDialogBox {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 0%;
+    overflow-y: hidden;
+    position: absolute;
+    transition: 0.2s ease-in-out;
+}
+
+#messageDialog{
+    display: grid;
+    grid-template-columns: 7fr 1fr;
+    height: fit-content;
+    width: 100%;
+    background-color: #16a085;
+    color: white;
+    border-radius: 0% 0% 50% 50%;
+    font-size: 0.5rem;
+    padding: 5px;
+
+}
+
+#messageDialogCloseBtn {
+    font-size: 1.2rem;
+    width: fit-content;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+#messageDialogCloseBtn:hover {
+    font-size: 1.4rem;
+    font-weight: bolder;
+}
+
+/* DIALOGO INFORMACION-MOVIL */
+@media only screen and (max-width: 900px) {
+    #messageDialog{
+        font-size: 0.3rem;
+    
+    }
+
+    #messageDialogCloseBtn {
+        font-size: 1rem;
+        transition: none;
+    }
+
+    #messageDialogCloseBtn:hover {
+        font-size: 1rem;
+        font-weight: bolder;
+    }
+
+
+}
+
+/* LOGIN Y REGISTRO */
+
+#loginRegister {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: #30352d;
+    overflow: hidden;
+   
+}
+
+.logRegForm {
+    display: block;
+    min-width: 500px;
+    min-height: 300px;
+    max-height: 500px;
+    background-color: #FFF;
+    margin-top: 100px;
+    box-shadow: 2px 3px #201f1f;
+    border-radius: 90px;
+}
+
+.logRegForm h3 {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+
+
+.loginRegHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4d3ee1;
+    color: #FFF;
+    height: 60px;
+    min-width: 30%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 90px 90px 10px 10px;
+
+}
+
+
+
+.formElements {
+    margin-top: 30px;
+    border: none;
+    font-size: 1.5rem;
+    width: 70%;
+}
+
+.formInputs {
+    border-bottom: 3px solid #16a085;
+}
+
+
+
+.loginRegBtn {
+    background-color: #a4d166;
+    margin-bottom: 30px;
+}
+
+
+.atention {
+    margin-top: 500px;
+    text-decoration: underline;
+    color: #e76e54;
+    cursor: pointer;
+}
+
+/* LOGIN Y REGISTRO MÓVIL */
+
+@media only screen and (max-width: 900px) {
+    .logRegForm {
+        display: block;
+        width: 90%;
+        height: 97%;
+        background-color: #FFF;
+        box-shadow: 2px 3px #201f1f;
+        border-radius: 90px;
+        margin-top: 20px;
+        font-size: smaller;
+    }
+
+    .logRegForm {
+       
+        min-width: 95%;
+        min-height: 300px;
+        max-height: 500px;
+        background-color: #FFF;
+        margin-top: 10vh;
+        box-shadow: 2px 3px #201f1f;
+        border-radius: 90px;
+    }
+
+    .logRegForm button {
+        font-size: large;
+    }
+
+    .logRegForm input {
+        font-size: large;
+    }
+  }
+
+
+
+
+
+/* MAIN */
+#main {
+    display: grid;
+    grid-template-columns: 1.5fr 6.5fr;
+    height: 100vh;
+}
+
+
+
+/* Menú lateral ASIDE */
+#aside {
+    display: flex;
+    flex-direction: column;
+    background-color: #282830;
+    color: aliceblue;
+    text-align: center;
+
+}
+
+#aside>ul,
+#aside-movil>ul {
+    list-style: none;
+    padding-left: 0;
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+    margin-top: 20%;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+
+#aside ul li:hover,
+#aside-movil ul li:hover {
+    background-color: #dcebd4;
+    color: #191f17;
+    letter-spacing: 3px;
+    transition: 0.2s ease-in-out;
+}
+
+#aside-movil {
+    display: none;
+    background-color: #282830;
+    color: aliceblue;
+}
+
+
+
+/* Menú lateral ASIDE-MOBILE */
+
+@media only screen and (max-width: 900px) {
+    #aside {
+        display: none;
+    }
+
+    #aside-movil {
+        display: none;
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+/* INICIO-MAIN */
+
+#dashboard-main {
+    overflow-y: auto;
+    
+}
+
+#dashboard-main h1 {
+    margin-top: 5%;
+    font-size: 2.5rem;
+}
+
+/* INICIO-MAIN-MOBILE */
+
+@media only screen and (max-width: 900px) {
+    #dashboard-main {
+        width: 100vw;
+        
+    }
+
+    #dashboard-main h1 {
+        font-size: 1.5rem;
+        
+    }
+}
+
+
+#chartGastosMes {
+    background-color: #e7ab39;
+}
+
+#chartTipoGastos {}
+
+#chartGastosAno {
+    background-color: #56a468;
+}
+
+.chartHolder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    flex-wrap: wrap;
+
+}
+
+.displayHolder {
+    margin: 5%;
+}
+
+.roundDisplay {
+    display: flex;
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    padding: 20px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+    /*transform: translateY(-500px)*/; 
+
+}
+
+.roundDisplay h2 {
+    font-size: 2rem;
+}
+
+.roundDisplay:hover {
+    transform: scale(1.1, 1.1);
+}
+
+
+
+
+/* GASTOS-MAIN */
+#gastos-main {
+    grid-template-rows: 1fr 1fr 5fr 1fr;
+    overflow-y: auto;
+    max-height: 50%px;
+}
+
+/* GASTOS-MAIN-FECHA-ACTUAL */
+#fechaActual {
+    display: grid;
+    grid-template-columns: 3fr 2fr 3fr;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+
+#arrows-left {
+    text-align: right;
+    cursor: pointer;
+}
+
+#arrows-right {
+    text-align: left;
+    cursor: pointer;
+}
+
+
+#arrows-left:hover {
+    color: #191f17;
+    letter-spacing: 10px;
+    transition: 0.2s ease-in-out;
+}
+
+#arrows-right:hover {
+    color: #191f17;
+    letter-spacing: 10px;
+    transition: 0.2s ease-in-out;
+
+}
+
+@media only screen and (max-width: 900px) {
+    #gastos-main {
+        width: 100vw;
+        max-height: 100%;
+        font-size: smaller;
+    }
+
+    #gastos-main table, button, input, select {
+        font-size: 0.7rem;
+    }
+
+    #gastos-main button {
+        font-size: 1rem;
+        padding: 5px;
+    }
+
+    #gastos-main h1 {
+        font-size: 1.3rem;
+        margin-left: 5px;
+        margin-right: 5px;
+
+    }
+
+    #fechaActual {
+        
+        grid-template-columns: 2fr 4fr 2fr;
+        
+    }
+
+  }
+
+
+
+
+/* GASTOS-MAIN-ACTIONBAR */
+#actionbar {
+    display: grid;
+    grid-template-columns: 4fr 4fr;
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 7px;
+}
+
+/* GASTOS-MAIN-SELECTOR-FECHA */
+#selectorFecha {
+    display: flex;
+}
+
+#selectorFecha select {
+    border: none;
+    /*border-bottom: 3px solid #83c560;*/
+    color: #56a468;
+    font-size: 1.5rem;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 900px) {
+    #actionbar {
+        display: grid;
+        grid-template-columns: 8fr;
+        grid-template-rows: 2;
+        row-gap: 5px;
+        justify-content: center;
+        width: 90%;
+        margin: 0 auto;
+        padding-bottom: 7px;
+    }
+
+    #selectorFecha {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    #selectorFecha select {
+        font-size: 1rem;
+    }
+}
+
+#irMesBtn {
+    background-color: #56a468;
+    color: aliceblue;
+    margin-left: 5%;
+}
+
+
+/* GASTOS-MAIN-DATAOPERATIONS */
+#dataOperations {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#addBtn {
+    background-color: #a4d166;
+    margin-right: 5px;
+}
+
+#delBtn {
+    background-color: #e76e54;
+}
+
+/* GASTOS-MAIN-DATAOPERATIONS-MOVIL */
+@media only screen and (max-width: 900px) {
+    #dataOperations {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    #addBtn {
+        background-color: #a4d166;
+        margin-right: 5px;
+        
+    }
+    
+    #delBtn {
+        background-color: #e76e54;
+    }
+}
+
+
+
+/* GASTOS-MAIN-TABLAS*/
+#tablaDatos {
+    display: grid;
+    border-collapse: collapse;
+    width: 90%;
+    margin: 0 auto;
+
+
+}
+
+#tabladatos th {
+    display: grid;
+    background-color: #56a468;
+    color: aliceblue;
+    height: 3em;
+    align-items: center;
+
+}
+
+#tablaDatos tr {
+    display: grid;
+    grid-template-columns: 0.1fr 2fr 2fr 2fr 2fr;
+    height: 3em;
+    align-items: center;
+}
+
+/* ARREGLAR */
+#tablaDatos tr:hover {
+    background-color: aquamarine;
+}
+
+#tablaDatos tr:nth-child(even) {
+    background-color: #f2f2f2;
+
+}
+
+#tablaDatos tr:nth-child(odd) {
+    background-color: #dcebd4;
+
+}
+
+#tablaDatosBody {
+    display: table;
+}
+
+/* GASTOS-MAIN-TOTAL MES */
+#totalMes {
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#totalMes #total {
+    display: grid;
+    grid-template-columns: 4fr 4fr;
+    background-color: #56a468;
+    color: aliceblue;
+}
+
+.selectedBox {
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* GASTOS-MAIN-FORM AÑADIR GASTO */
+#addExpenseForm {
+    display: none;
+    margin: 0 auto;
+    width: 500px;
+    min-height: 40vh;
+    max-height: 65vh;
+    background: #FFF;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    margin-top: 10%;
+    transition: 0.2s ease-in-out;
+
+}
+
+
+
+#addExpenseForm h1 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 4%;
+}
+
+#addExpenseForm select {
+
+    margin-bottom: 30px;
+    padding: 4px;
+    height: 32px;
+    border: none;
+    border-bottom: 2px solid #16a085;
+    transition: 0.2s ease;
+    text-align: left;
+    color: #16a085;
+    transition: 0.2s ease;
+    width: 60%;
+
+}
+
+#addExpenseForm input {
+
+    margin-bottom: 30px;
+    padding: 4px;
+    height: 32px;
+    border: none;
+    border-bottom: 2px solid #16a085;
+    transition: 0.2s ease;
+    text-align: left;
+    color: #16a085;
+    transition: 0.2s ease;
+    width: 60%;
+
+}
+
+
+#addExpenseForm button {
+    background-color: #a4d166;
+}
+
+#addExpenseForm button:hover {
+    border-bottom: 2px solid #0c352d;
+    background-color: #363f34;
+    transition: 0.2s ease;
+    color: white;
+}
+
+
+
+
+#addExpenseCloseButton {
+    font-family: inherit;
+    background-color: #191f17;
+    color: #FFF;
+    position: relative;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 4px;
+    margin-left: 90%;
+
+
+}
+
+
+#addExpenseCloseButton:hover {
+    transition: 0.2s ease;
+    background-color: #24c40f;
+
+
+
+}
+
+#addExpenseOverlay {
+    display: none;
+    background-color: #191f17ab;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    position: absolute;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    padding: 30px;
+    left: 0px;
+    top: 0px;
+
+}
+
+/* GASTOS-MAIN-FORM AÑADIR GASTO-MÓVIL */
+@media only screen and (max-width: 900px) {
+
+
+    #addExpenseForm {
+        width: 90vw;
+    
+    }
+
+    #addExpenseOverlay {
+        
+        padding: 0px;
+        
+    }
+
+    #addExpenseCloseButton {
+        
+        font-size: 1rem;
+        width: 25px;
+        height: 25px;
+        border-radius: 5px;
+        padding: 4px;
+        margin-left: 90%;
+    
+    
+    }
+
+    #addExpenseForm button {
+        font-size: medium;
+    }
+
+    #addExpenseForm input {
+        font-size: medium;
+    }
+    
+    #addExpenseForm select {
+        font-size: medium;
+    
+    }
+}
+
+/* MODAL ELIMINAR GASTO */
+
+#deleteExpensesOverlay {
+    display: none;
+    background-color: #191f17ab;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    position: absolute;
+    align-items: center;
+    align-content: center;
+    padding: 30px;
+    left: 0px;
+    top: 0px;
+    overflow: hidden;
+
+}
+
+#deleteExpensesModal {
+    display: block;
+    margin: 0 auto;
+    min-width: fit-content;
+    max-width: 30vw;
+    min-height: fit-content;
+    background: #FFF;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    transition: 0.2s ease-in-out;
+}
+
+#deleteExpensesModal > button {
+    border: none;
+}
+
+#deleteExpensesModal > #deleteYes {
+   background-color: #a4d166;
+   color: #FFF;
+}
+
+#deleteExpensesModal > #deleteCancel {
+   background-color: #e76e54;
+   color: #FFF;
+}
+
+/* MODAL ELIMINAR GASTO-MOVIL */
+@media only screen and (max-width: 900px) {
+    #deleteExpensesOverlay {
+        padding: 0px;
+    
+    }
+    
+}
+
+
+/* GRAFICOS-MAIN */
+
+#graficos-main {
+    overflow-y: auto;
+    padding-bottom: 200px;
+    padding-left: 5%;
+    padding-right: 5%;
+
+}
+
+.chartContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.chartCard {
+    width: fit-content;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 400px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 2%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 900px) {
+    #graficos-main {
+        width: 100vw;
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+
+    .chartCard {
+        
+        margin-left: 0px;
+        margin-right: 0px;
+        
+    }
+}
+
+/* ACERCA DE-MAIN */
+
+#acerca-de {
+    margin: 40px;
+    padding: 20px;
+    border: 15px dashed #fff;
+    border-radius: 15%;
+    height: 70%;
+    overflow-y: scroll;
+    background-color: #7d33ad;
+    color: #FFF;
+
+}
+
+#acerca-de > p {
+    text-align: left;
+
+}
+
+/* ACERCA DE-MAIN-MOVIL */
+@media only screen and (max-width: 900px) {
+    #acerca-de {
+        margin: 10px;
+        padding: 20px;
+        border: 7px dashed #fff;
+        border-radius: 15%;
+        height: 100%;
+        overflow-y: scroll;
+        width: 90vw;
+    
+    }
+}
+
+
+
+/* CLASSES GENERALES */
+.inline {
+    display: grid;
+    grid-template-columns: 3fr 2fr 3fr;
+}
+
+.greenColour {
+    color: #83c560;
+}
+
+.stdBtn {
+    border-radius: 5px;
+    min-width: 100px;
+    padding: 8px 12px 8px 12px;
+    border: none;
+    font-size: 1em;
+    color: aliceblue;
+    font-weight: 700;
+    transition: all 0.4s ease 0s;
+    cursor: pointer;
+}
+
+.stdBtn:hover {
+    background: #434343;
+    letter-spacing: 2px;
+
+}
+
+.scrollable {
+    display: block;
+    overflow-y: scroll;
+    height: 50vh;
+    
+}
+
+@media only screen and (max-width: 900px) {
+    .scrollable {
+        height: 40vh;
+        
+    }
+}
+
+
+
+/* ANIMACIONES */
+
+.slideUp {
+    transition: 0.2s ease-in-out;
+    transform: translateY(-100%);
+}
+
+.slideDown {
+    transition: 0.2s ease-in-out;
+    transform: translateY(300%);
+}
+
+.slideLeft {
+    transition: 0.2s ease-in-out;
+    transform: translateX(-100%);
+}
+
+.slideRight {
+    transition: 0.2s ease-in-out;
+    transform: translateX(100%);
+}
+
+#signUpForm input {
+    border-bottom: 2px solid #16a085;
+    color: #16a085;
+    transition: 0.2s ease;
+}
+
+#signUpForm button {
+    border-bottom: 2px solid #16a085;
+    color: #ffffff;
+    transition: 0.2s ease;
+    background-color: #3da016;
+}
+
+#signUpForm button:hover {
+    border-bottom: 2px solid #0c352d;
+    background-color: #363f34;
+    ;
+    transition: 0.2s ease;
+    color: white;
+}
+
+.zoom:hover {
+    transform: scale(1.5);
+}
+
+
+.hide {
+    display: none;
+}
